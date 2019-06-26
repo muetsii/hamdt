@@ -31,5 +31,8 @@ class Power {
     static categoriesMundane () {
         return CATEGORIES_MUNDANE;
     }
-
 }
+
+Power.POWERS = POWERS;
+
+module.exports = Power;

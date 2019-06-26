@@ -20,5 +20,8 @@
   "license": "AGPL-3.0",
   "devDependencies": {
     "mocha": "^6.1.4"
+  },
+  "dependencies": {
+    "chai": "^4.2.0"
   }
 }

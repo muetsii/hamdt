@@ -1,10 +1,10 @@
 const Power = require('../power/Power');
 
 class Race {
-    constructor(name, tier=0, powers=this.initPowers()) {
+    constructor(name, tier=0, powers=this.racePowers()) {
         this.name = name;
         this.tier = tier;
-        this.powers = [];
+        this.powers = powers;
     }
 
     addPower(power) {
@@ -15,7 +15,7 @@ class Race {
         return this.powers.filter((p) => {
             return (!category || p.category == category) &&
                 (!name || p.name == name) &&
-                (tier === undefined || tier === null || p.tier = tier);
+                (tier === undefined || tier === null || p.tier == tier);
         });
     }
 
@@ -26,7 +26,7 @@ class Race {
         return this.powers.filter({tier});
     }
 
-    initPowers() {
+    racePowers() {
         return Power.CATEGORIES_MUNDANE;
     }
 }
