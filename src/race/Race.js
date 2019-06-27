@@ -27,7 +27,7 @@ class Race {
     }
 
     racePowers() {
-        return Power.CATEGORIES_MUNDANE;
+        return Power.Power.CATEGORIES_MUNDANE;
     }
 }
 

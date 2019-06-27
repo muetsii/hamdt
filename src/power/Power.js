@@ -31,6 +31,13 @@ class Power {
     static categoriesMundane () {
         return CATEGORIES_MUNDANE;
     }
+
+    static raceAndMundanePowers(raceName) {
+        return POWERS.filter((p) => {
+            return CATEGORIES_MUNDANE.indexOf(p.category) != -1 ||
+                p.category == raceName;
+        });
+    }
 }
 
 Power.POWERS = POWERS;
