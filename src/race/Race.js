@@ -1,10 +1,11 @@
 const Power = require('../power/Power');
 
 class Race {
-    constructor(name, tier=0, powers=this.racePowers()) {
+    constructor(name, tier=0, powers=this.racePowers(), frequency=1) {
         this.name = name;
         this.tier = tier;
         this.powers = powers;
+        this.frequency = frequency;
     }
 
     addPower(power) {
