@@ -20,12 +20,12 @@ class Power {
         this.tier = tier;
         this.category = category;
         this.description = description;
-        this.freq = 1;
+        this.freq = freq;
         this.specialRule = specialRule;
     }
 
     static load(o) {
-        return new Power(o.category, o.tier, o.name, o.description, o.freq);
+        return new Power(o.category, o.tier, o.name, o.description, o.freq, o.specialRule);
     }
 
     static categoriesMundane () {
