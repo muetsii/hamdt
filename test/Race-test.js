@@ -9,7 +9,7 @@ const SAMPLE_POWER_PHYSICAL = new Power('oído', 0, 'physical', 'oír');
 describe ('Race', () => {
     describe('constructor', () => {
         it('should create the object with explicit powers', () => {
-            const race = new Race('superhero', 2, [SAMPLE_POWER]);
+            const race = new Race('superhero', 2, 0.2, [SAMPLE_POWER]);
 
             expect(race.name).equal('superhero');
             expect(race.tier).equal(2);

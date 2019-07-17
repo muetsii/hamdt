@@ -7,6 +7,13 @@ class RNG {
         return Math.floor(RNG.randomReal() * sides) + 1;
     }
 
+    /**
+     * @return 0-sides
+     */
+    static d0(sides) {
+        return RNG.d(sides+1) - 1;
+    }
+
     static d10() {
         return RNG.d(10);
     }
@@ -38,6 +45,9 @@ class RNG {
         return RNG.retier(Math.floor(level/10), level%10);
     }
 
+    static chooseOne(array) {
+        return array[RNG.d(array.length)-1];
+    }
 }
 
 module.exports = RNG;

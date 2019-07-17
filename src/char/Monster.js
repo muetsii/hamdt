@@ -1,10 +1,12 @@
 class Monster {
-    constructor(name, race, tier, powers=[]) {
+    constructor(name, race, tier, powers) {
         this.name = name;
         this.race = race;
         this.tier = tier;
-        this.powers = powers;
 
+        this.powers = [];
+        powers = powers || race.generatePowers(tier);
+        this.addPowers(powers);
     }
 
     addPower(power) {
@@ -19,3 +21,5 @@ class Monster {
         }
     }
 }
+
+module.exports = Monster;
