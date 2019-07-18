@@ -10,7 +10,7 @@ const CAT_BAK = 'bakemono';
 function specialRuleRemoveSimilar(m) {
     const radyx = this.name.split(':')[0];
     for (let i=0; i<m.powers.length; i++) {
-        if (m.powers[i].name != this.name && m.powers[i].split(':')[0] == radyx) {
+        if (m.powers[i].name != this.name && m.powers[i].name.split(':')[0] == radyx) {
             m.powers.splice(i, 1);
         }
     }

@@ -30,7 +30,7 @@ class Bakemono extends Race {
                 this._generatePowersForCategory(
                     category,
                     tier,
-                    1 + RNG.retier(tier),
+                    1 + RNG.d0(RNG.retier(tier)),
                 )
             );
         }

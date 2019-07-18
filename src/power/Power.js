@@ -55,6 +55,10 @@ class Power {
 
         return power;
     }
+
+    toText() {
+        return `${this.name} (${this.category}:${this.tier}): ${this.description}`;
+    }
 }
 
 Power.POWERS = POWERS.map((o) => Power.load(o));

@@ -20,6 +20,16 @@ class Monster {
             p.apply(this);
         }
     }
+
+    toText() {
+        const name = this.name ? this.name + ': ' : '';
+        const separator = '=================';
+
+        const identification = `${name}${this.race.name}(${this.tier})`;
+        const powerList = this.powers.map((p) => p.toText()).join('\n');
+
+        return `${separator}\n${identification}\n${powerList}\n${separator}`;
+    }
 }
 
 module.exports = Monster;
