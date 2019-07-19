@@ -7,6 +7,8 @@ class Monster {
         this.powers = [];
         powers = powers || race.generatePowers(tier);
         this.addPowers(powers);
+
+        this.gender = race.generateGender();
     }
 
     addPower(power) {
@@ -25,7 +27,7 @@ class Monster {
         const name = this.name ? this.name + ': ' : '';
         const separator = '=================';
 
-        const identification = `${name}${this.race.name}(${this.tier})`;
+        const identification = `${name}${this.race.name}(${this.tier}) ${this.gender}`;
         const powerList = this.powers.map((p) => p.toText()).join('\n');
 
         return `${separator}\n${identification}\n${powerList}\n${separator}`;

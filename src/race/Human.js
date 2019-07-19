@@ -7,6 +7,9 @@ const FREQ = 1;
 class Human extends Race {
     constructor() {
         super(NAME, TIER, FREQ);
+
+        // Human female thugs are rare
+        this._femaleProportion = 0.1;
     }
 }
 

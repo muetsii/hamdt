@@ -9,6 +9,7 @@ class Race {
         this.tier = tier;
         this.powers = powers;
         this.freq = freq;
+        this._femaleProportion = 0.5;
     }
 
     addPower(power) {
@@ -68,6 +69,12 @@ class Race {
 
     _npowers(tier) {
         return RNG.d0(RNG.retier(tier));
+    }
+
+    generateGender() {
+        return (Math.random() < this._femaleProportion) ?
+            'female':
+            'male';
     }
 }
 

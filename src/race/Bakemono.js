@@ -13,6 +13,9 @@ const FREQ = 0.5;
 class Bakemono extends Race {
     constructor() {
         super(NAME, TIER, FREQ);
+
+        // males are predominant
+        this._femaleProportion = 0.3;
     }
 
     racePowerCategories() {
