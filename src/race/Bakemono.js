@@ -37,8 +37,8 @@ class Bakemono extends Race {
 
         return powers;
     }
-
-
 }
+
+Bakemono.RACE = new Bakemono();
 
 module.exports = Bakemono;

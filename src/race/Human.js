@@ -10,4 +10,6 @@ class Human extends Race {
     }
 }
 
+Human.RACE = new Human();
+
 module.exports = Human;
