@@ -1,12 +1,6 @@
-const Monster = require('./char/Monster');
+const MonsterGenerator = require('./generator/MonsterGenerator');
 
-const RACE_BAKEMONO = new (require('../src/race/Bakemono'))();
-
-for (let tier = 1; tier<10; tier++) {
-    console.log(new Monster(
-        'Minh',
-        RACE_BAKEMONO,
-        tier
-    ).toText());
+for (let level=0; level<100; level+=11) {
+    console.log(MonsterGenerator.monsterForLevel(level).toText());
 }
 
