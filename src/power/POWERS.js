@@ -1,8 +1,11 @@
+const RNG = require('../generator/RNG');
+
 const CAT_ = 'placeholder';
 const CAT_PHY = 'physical';
 const CAT_EQU = 'equipment';
 const CAT_BAK = 'bakemono';
 
+const PROB_AMMO = 0.3;
 
 // TODO: load from a file
 //    constructor(name, tier, category, description, frequency=1, specialRule) {
@@ -16,7 +19,23 @@ function specialRuleRemoveSimilar(m) {
     }
 }
 
-module.exports = [
+function specialRuleAddAmmo(m) {
+    const ammo = POWERS.find( (p) => p.name = 'ammo');
+    let opportunities = m.tier;
+    while (opportunities>=0) {
+        if (Math.random() < PROB_AMMO) {
+            m.powers.addPower(ammo);
+        } else {
+            opportunities--;
+        }
+    }
+}
+
+function specialRuleRemoveAmmo(m) {
+    m.powers.splice(m.powers.indexOf( (p) => p.name='ammo'), 1);
+}
+
+const POWERS = [
     {
         category: CAT_, tier: 0,
         name: '',
@@ -262,6 +281,18 @@ module.exports = [
         description: 'Lleva una herramienta que podría ser usada como un arma precaria',
     },
     {
+        category: CAT_EQU, tier: 0,
+        name: 'out of ammo',
+        description: 'if the monster has firearms, the are out of ammo',
+        specialRule: specialRuleRemoveAmmo,
+    },
+    {
+        category: CAT_EQU, tier: 0,
+        name: 'ammo',
+        description: 'from their main weapon, if the monster does not have, from a type useful to the player',
+        freq: 0.3,
+    },
+    {
         category: CAT_EQU, tier: 1,
         name: 'knuckles',
         description: '',
@@ -282,14 +313,82 @@ module.exports = [
         description: '',
     },
     {
+        category: CAT_EQU, tier: 1,
+        name: 'stake',
+        description: '',
+        freq: 0.4,
+    },
+    {
+        category: CAT_EQU, tier: 1,
+        name: 'crossbow',
+        description: '',
+        freq: 0.3,
+    },
+    {
         category: CAT_EQU, tier: 2,
         name: 'sword',
         description: '',
     },
     {
         category: CAT_EQU, tier: 2,
-        name: 'uzi',
+        name: 'submachinegun',
         description: '',
+        freq: 0.5,
+    },
+    {
+        category: CAT_EQU, tier: 2,
+        name: 'shotgun',
+        description: '',
+    },
+    {
+        category: CAT_EQU, tier: 3,
+        name: 'rifle',
+        description: '',
+        freq: 0.2,
+    },
+    {
+        category: CAT_EQU, tier: 2,
+        name: 'ArmorClass:2',
+        description: 'Class 2 armors, +2 soak, -1 Dex',
+        specialRule: specialRuleRemoveSimilar
+    },
+    {
+        category: CAT_EQU, tier: 3,
+        name: 'axe',
+        description: '',
+    },
+    {
+        category: CAT_EQU, tier: 3,
+        name: 'katana',
+        description: '',
+    },
+    {
+        category: CAT_EQU, tier: 3,
+        name: 'assault rifle',
+        description: '',
+    },
+    {
+        category: CAT_EQU, tier: 3,
+        name: 'semi-auto shotgun',
+        description: '',
+    },
+    {
+        category: CAT_EQU, tier: 3,
+        name: 'ArmorClass:3',
+        description: 'Class 3 armors, +3 soak, -1 Dex',
+        specialRule: specialRuleRemoveSimilar
+    },
+    {
+        category: CAT_EQU, tier: 4,
+        name: 'ArmorClass:4',
+        description: 'Class 4 armors, +4 soak, -2 Dex',
+        specialRule: specialRuleRemoveSimilar
+    },
+    {
+        category: CAT_EQU, tier: 5,
+        name: 'ArmorClass:5',
+        description: 'Class 5 armors, +5 soak, -3 Dex',
+        specialRule: specialRuleRemoveSimilar
     },
 
     // Bakemono
@@ -379,3 +478,5 @@ module.exports = [
         description: 'Several mouths in any body part. One extra attack Str +1 agg.',
     },
 ];
+
+module.exports = POWERS;
