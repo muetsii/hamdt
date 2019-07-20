@@ -19,6 +19,19 @@ class MonsterGenerator {
         const tier = RNG.tierForLevel(level);
         return MonsterGenerator.monster(RNG.d0(tier));
     }
+
+    static group(level) {
+        const group = [];
+        let groupLevel = RNG.d0(level);
+
+        while (groupLevel > 0) {
+            const monster = MonsterGenerator.monsterForLevel(level);
+            group.push(monster);
+            groupLevel -= monster.tier * 10 + 5;
+        }
+
+        return group;
+    }
 }
 
 module.exports = MonsterGenerator;
