@@ -30,7 +30,7 @@ class RNG {
             }
 
             result += die * sign;
-        } while (die > 1 && die < 10);
+        } while (die == 1 || die == 10);
 
         return result;
     }
