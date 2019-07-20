@@ -350,7 +350,8 @@ const POWERS = [
         category: CAT_EQU, tier: 2,
         name: 'ArmorClass:2',
         description: 'Class 2 armors, +2 soak, -1 Dex',
-        specialRule: specialRuleRemoveSimilar
+        specialRule: specialRuleRemoveSimilar,
+        freq: 0.5,
     },
     {
         category: CAT_EQU, tier: 3,
@@ -376,19 +377,28 @@ const POWERS = [
         category: CAT_EQU, tier: 3,
         name: 'ArmorClass:3',
         description: 'Class 3 armors, +3 soak, -1 Dex',
-        specialRule: specialRuleRemoveSimilar
+        specialRule: specialRuleRemoveSimilar,
+        freq: 0.5,
+    },
+    {
+        category: CAT_EQU, tier: 3,
+        name: 'grenade',
+        description: '',
+        freq: 0.4,
     },
     {
         category: CAT_EQU, tier: 4,
         name: 'ArmorClass:4',
         description: 'Class 4 armors, +4 soak, -2 Dex',
-        specialRule: specialRuleRemoveSimilar
+        specialRule: specialRuleRemoveSimilar,
+        freq: 0.5,
     },
     {
         category: CAT_EQU, tier: 5,
         name: 'ArmorClass:5',
         description: 'Class 5 armors, +5 soak, -3 Dex',
-        specialRule: specialRuleRemoveSimilar
+        specialRule: specialRuleRemoveSimilar,
+        freq: 0.5,
     },
 
     // Bakemono
