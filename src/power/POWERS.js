@@ -5,10 +5,13 @@ const CAT_PHY = 'physical';
 const CAT_EQU = 'equipment';
 const CAT_BAK = 'bakemono';
 const CAT_KUE = 'kueijin';
-const CAT_KUE_DEM = 'kueijin-demon';
-
-
-const PROB_AMMO = 0.3;
+const CAT_KUE_DEM = 'kueijin:demon';
+const CAT_KUE_SHI = 'kueijin:shintai';
+const CAT_KUE_CHI = 'kueijin:chi';
+const CAT_KUE_SOU = 'kueijin:soul';
+const CAT_KUE_BIL = 'kueijin:bile-shintai';
+const CAT_KUE_GDB = 'kueijin:godbody';
+const CAT_KUE_OTH = 'kueijin:others';
 
 // TODO: load from a file
 //    constructor(name, tier, category, description, frequency=1, specialRule) {
@@ -22,6 +25,7 @@ function specialRuleRemoveSimilar(m) {
     }
 }
 
+const PROB_AMMO = 0.3;
 function specialRuleAddAmmo(m) {
     const ammo = POWERS.find( (p) => p.name = 'ammo');
     let opportunities = m.tier;
@@ -566,6 +570,269 @@ const POWERS = [
         freq: 0.0125,
         specialRule: specialRuleRemoveSimilar,
     },
+    {
+        category: CAT_KUE_DEM, tier: 1,
+        name: 'BlackWind:1',
+        description: '',
+        specialRule: specialRuleRemoveSimilar,
+    },
 ];
+
+function addSequence(baseName, category, first, last, specialRule, freqs) {
+    for(let i=first; i<=last; i++) {
+        POWERS.push({
+            name: baseName + ':' + i,
+            category,
+            description: '',
+            specialRule,
+            freq: freqs && Array.isArray(freqs) ? freqs[i] : freqs,
+        });
+    }
+}
+
+addSequence(
+    'BlackWind',
+    CAT_KUE_DEM,
+    1, 10,
+);
+
+addSequence(
+    'DemonShintai',
+    CAT_KUE_DEM,
+    1, 10,
+);
+
+addSequence(
+    'BlackMontain',
+    CAT_KUE_DEM,
+    1, 10,
+);
+
+addSequence(
+    'Kiai',
+    CAT_KUE_DEM,
+    1, 10,
+);
+
+addSequence(
+    'HellWeaving',
+    CAT_KUE_DEM,
+    1, 10,
+);
+
+addSequence(
+    'BeastShintai',
+    CAT_KUE_SHI,
+    1, 10,
+    undefined,
+    0.4,
+);
+
+addSequence(
+    'BloodShintai',
+    CAT_KUE_SHI,
+    1, 10,
+);
+
+addSequence(
+    'BoneShintai',
+    CAT_KUE_SHI,
+    1, 10,
+);
+
+addSequence(
+    'FleshSintai',
+    CAT_KUE_SHI,
+    1, 10,
+);
+
+addSequence(
+    'JadeShintai',
+    CAT_KUE_SHI,
+    1, 10,
+);
+
+addSequence(
+    'GhostFlameShintai',
+    CAT_KUE_SHI,
+    1, 10,
+);
+
+addSequence(
+    'SmokeShintai',
+    CAT_KUE_SHI,
+    1, 10,
+    undefined,
+    0.5,
+);
+
+addSequence(
+    'StormShintai',
+    CAT_KUE_SHI,
+    1, 10,
+    undefined, 0.5,
+);
+
+addSequence(
+    'Equilibrium',
+    CAT_KUE_CHI,
+    1, 10,
+);
+
+addSequence(
+    'FengShui',
+    CAT_KUE_CHI,
+    1, 10,
+    undefined, 0.3,
+);
+
+addSequence(
+    'Tapestry',
+    CAT_KUE_CHI,
+    1, 10,
+);
+
+addSequence(
+    'YangPrana',
+    CAT_KUE_CHI,
+    1, 10,
+);
+
+addSequence(
+    'YinPrana',
+    CAT_KUE_CHI,
+    1, 10,
+);
+
+addSequence(
+    'ChiiuMuh',
+    CAT_KUE_SOU,
+    1, 10,
+);
+
+addSequence(
+    'Cultivation',
+    CAT_KUE_SOU,
+    1, 10,
+);
+
+addSequence(
+    'Internalize',
+    CAT_KUE_SOU,
+    1, 10,
+);
+
+addSequence(
+    'Mibasham',
+    CAT_KUE_SOU,
+    1, 10,
+    undefined, 0.4,
+);
+
+addSequence(
+    'Obligation',
+    CAT_KUE_SOU,
+    1, 10,
+);
+
+addSequence(
+    'TzuWei',
+    CAT_KUE_SOU,
+    1, 10,
+    undefined, 0.5,
+);
+
+addSequence(
+    'BalefireShintai',
+    CAT_KUE_BIL,
+    1, 10,
+);
+
+addSequence(
+    'DecayShintai',
+    CAT_KUE_BIL,
+    1, 10,
+);
+
+addSequence(
+    'DiseaseShintai',
+    CAT_KUE_BIL,
+    1, 10,
+);
+
+addSequence(
+    'PoisonShintai',
+    CAT_KUE_BIL,
+    1, 10,
+);
+
+addSequence(
+    'RadiationShintai',
+    CAT_KUE_BIL,
+    1, 10,
+);
+
+addSequence(
+    'GodbodyWater',
+    CAT_KUE_GDB,
+    1, 10,
+    undefined, 0.1,
+);
+
+addSequence(
+    'GodbodyMetal',
+    CAT_KUE_GDB,
+    1, 10,
+    undefined, 0.1,
+);
+
+addSequence(
+    'GodbodyEarth',
+    CAT_KUE_GDB,
+    1, 10,
+    undefined, 0.1,
+);
+
+addSequence(
+    'GodbodyWood',
+    CAT_KUE_GDB,
+    1, 10,
+    undefined, 0.1,
+);
+
+addSequence(
+    'GodbodyFire',
+    CAT_KUE_GDB,
+    1, 10,
+    undefined, 0.1,
+);
+
+addSequence(
+    'PrayerEating',
+    CAT_KUE_OTH,
+    1, 10,
+    undefined, 0.3,
+);
+
+addSequence(
+    'InwardWay',
+    CAT_KUE_OTH,
+    1, 10,
+    undefined, 0.3,
+);
+
+addSequence(
+    'TempestOfInward',
+    CAT_KUE_OTH,
+    1, 10,
+    undefined, 0.3,
+);
+
+addSequence(
+    'Focus',
+    CAT_KUE_OTH,
+    1, 10,
+    undefined, 0.3,
+);
 
 module.exports = POWERS;
