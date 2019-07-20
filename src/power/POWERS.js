@@ -4,6 +4,9 @@ const CAT_ = 'placeholder';
 const CAT_PHY = 'physical';
 const CAT_EQU = 'equipment';
 const CAT_BAK = 'bakemono';
+const CAT_KUE = 'kueijin';
+const CAT_KUE_DEM = 'kueijin-demon';
+
 
 const PROB_AMMO = 0.3;
 
@@ -430,7 +433,7 @@ const POWERS = [
     {
         category: CAT_BAK, tier: 1,
         name: 'Ojos de los Mil Infiernos',
-        description: 'Muestran el Yomi. FdV a 8 para no paralizarse 5 turnos menos AStucia',
+        description: 'Muestran el Yomi. FdV a 8 para no paralizarse 5 turnos menos Astucia',
     },
     {
         category: CAT_BAK, tier: 1,
@@ -480,12 +483,88 @@ const POWERS = [
     {
         category: CAT_BAK, tier: 1,
         name: 'Spirit Eye',
-        description: '1 wp -> look through the WAll',
+        description: '1 wp -> look through the Wall',
     },
     {
         category: CAT_BAK, tier: 1,
         name: 'Thousand Jaws',
         description: 'Several mouths in any body part. One extra attack Str +1 agg.',
+    },
+
+    // Kuei-jin
+    {
+        category: CAT_KUE, tier: 0,
+        name: 'Dharma:0',
+        description: 'chih mei',
+        freq: 0.5,
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 1,
+        name: 'Dharma:1',
+        description: '',
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 2,
+        name: 'Dharma:2',
+        description: '',
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 3,
+        name: 'Dharma:3',
+        description: '',
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 4,
+        name: 'Dharma:4',
+        description: '',
+        freq: 0.8,
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 5,
+        name: 'Dharma:5',
+        description: '',
+        freq: 0.4,
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 6,
+        name: 'Dharma:6',
+        description: '',
+        freq: 0.2,
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 7,
+        name: 'Dharma:7',
+        description: '',
+        freq: 0.1,
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 8,
+        name: 'Dharma:8',
+        description: '',
+        freq: 0.05,
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 9,
+        name: 'Dharma:9',
+        description: '',
+        freq: 0.025,
+        specialRule: specialRuleRemoveSimilar,
+    },
+    {
+        category: CAT_KUE, tier: 10,
+        name: 'Dharma:10',
+        description: '',
+        freq: 0.0125,
+        specialRule: specialRuleRemoveSimilar,
     },
 ];
 
