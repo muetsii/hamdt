@@ -68,7 +68,7 @@ class Race {
     }
 
     _npowers(tier) {
-        return RNG.d0(RNG.retier(tier));
+        return RNG.d0(RNG.retier(tier)+1);
     }
 
     generateGender() {
