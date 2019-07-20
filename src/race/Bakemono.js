@@ -32,7 +32,7 @@ class Bakemono extends Race {
             powers = powers.concat(
                 this._generatePowersForCategory(
                     category,
-                    tier,
+                    1, // All Bakemono powes are 1
                     1 + RNG.d0(RNG.retier(tier)),
                 )
             );
