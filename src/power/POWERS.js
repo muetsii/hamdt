@@ -570,12 +570,6 @@ const POWERS = [
         freq: 0.0125,
         specialRule: specialRuleRemoveSimilar,
     },
-    {
-        category: CAT_KUE_DEM, tier: 1,
-        name: 'BlackWind:1',
-        description: '',
-        specialRule: specialRuleRemoveSimilar,
-    },
 ];
 
 function addSequence(baseName, category, first, last, specialRule, freqs) {
@@ -583,6 +577,7 @@ function addSequence(baseName, category, first, last, specialRule, freqs) {
         POWERS.push({
             name: baseName + ':' + i,
             category,
+            tier: i,
             description: '',
             specialRule,
             freq: freqs && Array.isArray(freqs) ? freqs[i] : freqs,
