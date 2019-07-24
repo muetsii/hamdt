@@ -2,13 +2,9 @@
   "name": "hamdt",
   "version": "0.0.0",
   "description": "WoD random npc generator",
-  "main": "src/",
+  "main": "src/rest/index.js",
   "scripts": {
     "test": "mocha"
-  },
-  "repository": {
-    "type": "git",
-    "url": "asqueado@asqueados.net:repo/git/hamdt.git"
   },
   "keywords": [
     "wod",
@@ -19,8 +15,7 @@
   "author": "Mu",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "mocha": "^6.1.4",
-    "node-firefox": "^0.1.0"
+    "mocha": "^6.1.4"
   },
   "dependencies": {
     "chai": "^4.2.0",
