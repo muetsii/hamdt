@@ -25,7 +25,7 @@ const RACE_POWER_CATEGORIES = [
 ]; // Not including mundane
 
 const NAME = 'Kueijin';
-const TIER = 1;
+const TIER = 2;
 const FREQ = 0.3;
 
 class Kueijin extends Race {
