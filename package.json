@@ -25,6 +25,6 @@
     "start": "node src/rest/index.js"
   },
   "engines": {
-    "node": 10.x
+    "node": "10.x"
   }
 }
