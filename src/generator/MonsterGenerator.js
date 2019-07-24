@@ -22,12 +22,12 @@ class MonsterGenerator {
 
     static group(level) {
         const group = [];
-        let groupLevel = RNG.d0(level);
+        let groupLevel = RNG.d0(level*3);
 
         while (groupLevel > 0) {
             const monster = MonsterGenerator.monsterForLevel(level);
             group.push(monster);
-            groupLevel -= monster.tier * 10 + 5;
+            groupLevel -= monster.tier * 10 + monster.race.tier * 10 + 5;
         }
 
         return group;
