@@ -4,7 +4,8 @@
   "description": "WoD random npc generator",
   "main": "src/",
   "scripts": {
-    "test": "mocha"
+    "start": "node src/rest/index.js",
+    "test": "mocha --color test/**/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -19,14 +20,11 @@
   "author": "Mu",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "mocha": "^6.1.4",
+    "mocha": "^6.2.4",
     "node-firefox": "^0.1.0"
   },
   "dependencies": {
     "chai": "^4.2.0",
     "express": "^4.17.1"
-  },
-  "scripts": {
-    "start": "node src/rest/index.js"
   }
 }
