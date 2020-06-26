@@ -5,7 +5,7 @@ const Door = require('../dungeon/Door');
 const Room = require('../dungeon/Room');
 const Treasure = require('../dungeon/Treasure');
 
-const FREQ_TREASURE = 0.1;
+const FREQ_TREASURE = 0.2;
 const FREQ_MONSTER = 0.4;
 const FREQ_DOOR = 0.3;
 
@@ -67,9 +67,10 @@ class RoomGenerator {
         const doors = generateDoors(w, h, initialFacings, forceExit);
 
         const treasure = checkHasTreasure(level) ?
-              new Treasure(level) : null;
+              new Treasure(RNG.tierForLevel(level)) : null;
 
-        const monsters = MonsterGenerator.group(level);
+        const monsters = checkHasMonster(level) ?
+              MonsterGenerator.group(level) : null;
 
         return new Room(w, h, description, doors, monsters, treasure);
     }
