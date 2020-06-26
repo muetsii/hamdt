@@ -15,5 +15,6 @@ module.exports = {
     },
 
     RANGE_LEVEL: [1, 1000],
+    FACINGS: ['s', 'e', 'n', 'w'],
 };
 
