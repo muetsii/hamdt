@@ -16,7 +16,7 @@
   "author": "Mu",
   "license": "AGPL-3.0",
   "devDependencies": {
-    "mocha": "^6.2.4",
+    "mocha": "^6.1.4",
     "node-firefox": "^0.1.0"
   },
   "dependencies": {
