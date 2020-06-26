@@ -69,7 +69,8 @@ class RoomGenerator {
         const treasure = checkHasTreasure(level) ?
               new Treasure(level) : null;
 
-        const monsters = MonsterGenerator.group(level);
+        const monsters = checkHasMonster(level) ?
+              MonsterGenerator.group(level) : null;
 
         return new Room(w, h, description, doors, monsters, treasure);
     }
