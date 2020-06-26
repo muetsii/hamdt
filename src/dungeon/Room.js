@@ -11,7 +11,7 @@ class Room {
     }
 
     setDoors(doors) {
-        this.doors = new Array(Door.FACING_NAMES.length).fill([]);
+        this.doors = new Array(Door.FACING_NAMES.length).fill('d').map(d => []);
         for (let d of doors) {
             this.doors[d.facing].push(d);
         }
