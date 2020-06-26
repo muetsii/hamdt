@@ -60,7 +60,6 @@ class Race {
         }
 
         return powers;
-
     }
 
     racePowerCategories() {

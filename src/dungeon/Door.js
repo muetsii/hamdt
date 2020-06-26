@@ -1,7 +1,7 @@
-const FACINGS = [
-    'north',
+const FACING_NAMES = [
     'south',
     'east',
+    'north',
     'west',
 ];
 
@@ -12,7 +12,7 @@ class Door {
     }
 
     facingText() {
-        return FACINGS[this.facing];
+        return FACING_NAMES[this.facing];
     }
 
     toText() {
@@ -20,6 +20,7 @@ class Door {
     }
 }
 
-Door.FACINGS = FACINGS;
+Door.FACING_NAMES = FACING_NAMES;
+Door.DEFAULT_FACING = 0;
 
 module.exports = Door;

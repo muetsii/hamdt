@@ -35,6 +35,13 @@ class RNG {
         return result;
     }
 
+    /**
+     * Rolls three numbers and returns the middle one
+     */
+    static midRoll(sides = 10) {
+        return new Array(3).fill(RNG.d(sides)).sort((a, b) => a - b)[1];
+    }
+
     static retier(tier, step=0) {
         const adjustment = RNG.openRoll() + step;
         tier += Math.floor(adjustment / 10);
