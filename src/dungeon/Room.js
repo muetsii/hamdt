@@ -25,7 +25,7 @@ class Room {
         let doorText = 'Doors: \n';
         for (let i=0; i<this.doors.length; i++) {
             if (this.doors[i] && this.doors[i].length > 0) {
-                doorText += Door.FACING_NAMES[i] +
+                doorText += Door.FACING_NAMES[i] + ' ' +
                     this.doors[i].map((d) => d.position).join(', ') + '\n';
             }
         }
@@ -40,9 +40,10 @@ class Room {
 
     toText() {
         let doorText = this.doorText();
+        let dimensionText = `width: ${this.w}, height: ${this.h}`;
         let sections = ['monsters', 'treasure'].map( (s) => this.sectionText(s, s.toUpperCase()) ).join('\n');
 
-        return `${this.description}:\n${doorText}\n${sections}`;
+        return `${this.description}:\n${dimensionText}\n${doorText}\n${sections}`;
     }
 }
 
