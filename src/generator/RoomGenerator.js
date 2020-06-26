@@ -5,7 +5,7 @@ const Door = require('../dungeon/Door');
 const Room = require('../dungeon/Room');
 const Treasure = require('../dungeon/Treasure');
 
-const FREQ_TREASURE = 0.1;
+const FREQ_TREASURE = 0.2;
 const FREQ_MONSTER = 0.4;
 const FREQ_DOOR = 0.3;
 
