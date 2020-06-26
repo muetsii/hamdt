@@ -67,7 +67,7 @@ class RoomGenerator {
         const doors = generateDoors(w, h, initialFacings, forceExit);
 
         const treasure = checkHasTreasure(level) ?
-              new Treasure(level) : null;
+              new Treasure(RNG.tierForLevel(level)) : null;
 
         const monsters = checkHasMonster(level) ?
               MonsterGenerator.group(level) : null;
